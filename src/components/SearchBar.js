@@ -4,6 +4,10 @@ class SearchBar extends Component {
 
   state = { term: '' }
 
+  onInputChange = event => {
+    this.setState({ term: event.target.value })
+  }
+
   onFormSubmit = event => {
     event.preventDefault();
 
@@ -18,7 +22,7 @@ class SearchBar extends Component {
           <input  
             type="text" 
             value={this.state.term} 
-            onChange={e => this.setState({ term: e.target.value })}
+            onChange={this.onInputChange}
           />
         </form>
       </div>
