@@ -18,6 +18,7 @@ class App extends Component {
       }
     });
     this.setState({ videos: response.data.items })
+    console.log(this.state.videos)
   }
 
   render() {
