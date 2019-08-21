@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
 import SearchBar from './SearchBar'
+import youtube from '../api/youtube'
 
 class App extends Component {
 
   onFormSubmit = term => {
-    console.log(term)
+    youtube.get('/search', {
+      params: {
+        q: term
+      }
+    });
+    console.log(term);
   }
 
   render() {
