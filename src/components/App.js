@@ -4,19 +4,22 @@ import youtube from '../api/youtube'
 
 class App extends Component {
 
-  onFormSubmit = term => {
-    youtube.get('/search', {
+  state = { videos: [] }
+
+  onFormSubmit = async term => {
+    const response = await youtube.get('/search', {
       params: {
         q: term
       }
     });
-    console.log(term);
+    this.setState({ videos: response.data.items })
   }
 
   render() {
     return(
       <div>
         <SearchBar onSubmit={this.onFormSubmit}/>
+        <p>{this.state.videos.length} videos</p>
       </div>
     )
   }

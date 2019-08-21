@@ -13,6 +13,7 @@ class SearchBar extends Component {
 
     // parent component is told what current term is
     this.props.onSubmit(this.state.term);
+    
   }
 
   render() {
