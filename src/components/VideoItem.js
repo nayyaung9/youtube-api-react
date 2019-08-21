@@ -2,7 +2,7 @@ import React from 'react';
 
 const VideoItem = props => {
   return (
-    <div></div>
+    <div>{props.video.snippet.title}</div>
   )
 }
 
