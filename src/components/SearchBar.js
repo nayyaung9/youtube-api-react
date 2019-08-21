@@ -7,7 +7,8 @@ class SearchBar extends Component {
   onFormSubmit = event => {
     event.preventDefault();
 
-    console.log(this.state.term)
+    // parent component is told what current term is
+    this.props.onSubmit(this.state.term);
   }
 
   render() {
