@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
+
+// Components
 import SearchBar from './SearchBar'
+import VideoList from './VideoList'
+
+// API 
 import youtube from '../api/youtube'
 
 class App extends Component {
@@ -19,7 +24,7 @@ class App extends Component {
     return(
       <div>
         <SearchBar onSubmit={this.onFormSubmit}/>
-        <p>{this.state.videos.length} videos</p>
+        <VideoList videos={this.state.videos} />
       </div>
     )
   }
