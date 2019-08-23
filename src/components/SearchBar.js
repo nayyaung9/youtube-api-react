@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
-
-// material-ui
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import InputBase from '@material-ui/core/InputBase'
-import SearchIcon from '@material-ui/icons/Search'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import VideoCallIcon from '@material-ui/icons/VideoCall'
 import ScreenShareIcon from '@material-ui/icons/ScreenShare'
@@ -50,16 +47,16 @@ class SearchBar extends Component {
                   placeholder="Search..."
                   value={this.state.term} 
                   onChange={this.onInputChange}
-                  style={{ border: '1px solid #ddd', width: '80%', padding: '5px 5px'}}
+                  style={{ border: '1px solid #ddd', width: '80%', padding: '0px 5px'}}
                 />
               </form>
             </div>
 
             <div style={{ flexGrow: 1, textAlign: 'right'}}>
-              <VideoCallIcon />
-              <AccountCircleIcon />
-              <ScreenShareIcon />
-              <NotificationsIcon />
+              <VideoCallIcon style={{ padding: '0 15'}}/>
+              <AccountCircleIcon style={{ padding: '0 15'}}/>
+              <ScreenShareIcon style={{ padding: '0 15'}}/>
+              <NotificationsIcon style={{ padding: '0 15'}}/>
             </div>
             
           </Toolbar>

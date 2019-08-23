@@ -14,7 +14,7 @@ import Grid from '@material-ui/core/Grid'
 
 class App extends Component {
 
-  state = { videos: [], onSelectedVideo:null }
+  state = { videos: [], onSelectedVideo: null }
 
   onFormSubmit = async term => {
     const response = await youtube.get('/search', {
@@ -37,7 +37,7 @@ class App extends Component {
     return(
       <Container fixed>
         <SearchBar onSubmit={this.onFormSubmit}/>
-          <Grid container spacing={3} style={{ marginTop: 70 }}>
+          <Grid container spacing={2} style={{ marginTop: 70 }}>
             <Grid item xs={12} sm={8}>
               <VideoDetail video={this.state.onSelectedVideo}/>
             </Grid>
