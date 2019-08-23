@@ -6,8 +6,12 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase'
+import SearchIcon from '@material-ui/icons/Search'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
+import VideoCallIcon from '@material-ui/icons/VideoCall'
+import ScreenShareIcon from '@material-ui/icons/ScreenShare'
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 class SearchBar extends Component {
 
@@ -30,25 +34,32 @@ class SearchBar extends Component {
       <React.Fragment>
         <AppBar position="fixed" color="inherit">
           <Toolbar>
+
             <IconButton edge="start" color="inherit" aria-label="menu">
               <MenuIcon />
             </IconButton>
+
             <Typography variant="h6" style={{ flexGrow: 1 }}>
               Youtube Player
             </Typography>
-            <div style={{ position: 'relative', border: '1px solid #f1f1f1', borderRadius: '0.5em'}}>
-              <div style={{ height: '100%', position: 'absolute', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <SearchIcon />
-              </div>
-              <form onSubmit={this.onFormSubmit} style={{padding: 5 }}>
-                <InputBase 
+
+            <div style={{ flexGrow: 1}}>
+              <form onSubmit={this.onFormSubmit}>
+                <InputBase
                   type="text" 
                   placeholder="Search..."
                   value={this.state.term} 
                   onChange={this.onInputChange}
-                  style={{ marginLeft: 25 }}
+                  style={{ border: '1px solid #ddd', width: '80%', padding: '5px 5px'}}
                 />
-            </form>
+              </form>
+            </div>
+
+            <div style={{ flexGrow: 1, textAlign: 'right'}}>
+              <VideoCallIcon />
+              <AccountCircleIcon />
+              <ScreenShareIcon />
+              <NotificationsIcon />
             </div>
             
           </Toolbar>
