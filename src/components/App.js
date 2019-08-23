@@ -25,7 +25,8 @@ class App extends Component {
     this.setState({ 
       videos: response.data.items, 
       onSelectedVideo: response.data.items[0] 
-    })
+    });
+    console.log(this.state.videos)
   }
 
   onVideoSelect = (video) => {
