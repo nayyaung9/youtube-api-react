@@ -22,8 +22,10 @@ class App extends Component {
         q: term
       }
     });
-    this.setState({ videos: response.data.items })
-    console.log(this.state.videos)
+    this.setState({ 
+      videos: response.data.items, 
+      onSelectedVideo: response.data.items[0] 
+    })
   }
 
   onVideoSelect = (video) => {
