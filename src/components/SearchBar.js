@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 
+// material-ui
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+
 class SearchBar extends Component {
 
   state = { term: '' }
@@ -18,15 +23,22 @@ class SearchBar extends Component {
 
   render() {
     return(
-      <div>
-        <form onSubmit={this.onFormSubmit}>
-          <input  
-            type="text" 
-            value={this.state.term} 
-            onChange={this.onInputChange}
-          />
-        </form>
-      </div>
+      <React.Fragment>
+        <AppBar position="fixed">
+          <Toolbar>
+            <Typography>
+              Youtube Player
+            </Typography>
+            <form onSubmit={this.onFormSubmit}>
+              <input  
+                type="text" 
+                value={this.state.term} 
+                onChange={this.onInputChange}
+              />
+            </form>
+          </Toolbar>
+        </AppBar>
+      </React.Fragment>
     )
   }
 }

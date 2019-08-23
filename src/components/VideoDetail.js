@@ -1,5 +1,8 @@
 import React from 'react'
 
+// material-ui
+import Typography from '@material-ui/core/Typography'
+
 const VideoDetail = ({ video }) => {
 
   if(!video) {
@@ -11,13 +14,15 @@ const VideoDetail = ({ video }) => {
   return(
     <React.Fragment>
       
-      <iframe src={videoSrc} width="560" height="315" allowfullscreen></iframe>
+      <iframe src={videoSrc} width="100%" height="425" allowFullScreen></iframe>
 
-      <div className="card">
-        <div className="card-body">
-          <div className="card-title">{video.snippet.title}</div>
-          <div className="card-text">{video.snippet.description}</div>
-        </div>
+      <div style={{ padding: 20 }}>
+        <Typography variant="h5" component="h3">
+          { video.snippet.title }
+        </Typography>
+        <Typography component="p">
+          { video.snippet.description }
+        </Typography>
       </div>
     </React.Fragment>
   )

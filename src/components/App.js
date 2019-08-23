@@ -8,11 +8,13 @@ import VideoDetail from './VideoDetail'
 // API 
 import youtube from '../api/youtube'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// material-ui
+import Container from '@material-ui/core/Container'
+import Grid from '@material-ui/core/Grid'
 
 class App extends Component {
 
-  state = { videos: [], onSelectedVideo : null }
+  state = { videos: [], onSelectedVideo:null }
 
   onFormSubmit = async term => {
     const response = await youtube.get('/search', {
@@ -30,20 +32,20 @@ class App extends Component {
 
   render() {
     return(
-      <div className="container">
+      <Container fixed>
         <SearchBar onSubmit={this.onFormSubmit}/>
-        <div className="row">
-          <div className="col-md-6">
-            <VideoDetail video={this.state.onSelectedVideo}/>
-          </div>
-          <div className="col-md-6">
-            <VideoList 
-              onVideoSelect={this.onVideoSelect} 
-              videos={this.state.videos} 
-            />
-          </div>
-        </div>
-      </div>
+          <Grid container spacing={3} style={{ marginTop: 70 }}>
+            <Grid item xs={12} sm={8}>
+              <VideoDetail video={this.state.onSelectedVideo}/>
+            </Grid>
+            <Grid item xs={12} sm={4}>
+              <VideoList 
+                onVideoSelect={this.onVideoSelect} 
+                videos={this.state.videos} 
+              />
+            </Grid>
+          </Grid>
+      </Container>
     )
   }
 }
