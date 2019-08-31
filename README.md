@@ -3,8 +3,8 @@ This App is used youtube v3 api to get access data on localhost
 
 ## Installation
 
-> git clone https://github.com/nayyaung9/youtube-api-react.git
-> npm install
+> git clone https://github.com/nayyaung9/youtube-api-react.git <br />
+> npm install <br/>
 > npm start 
 
 <img src="./src/photo/youtube0.png">
